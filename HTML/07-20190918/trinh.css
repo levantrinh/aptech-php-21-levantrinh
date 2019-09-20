@@ -1,0 +1,50 @@
+.flag{
+    display: flex;
+}
+
+.flag_first, .flag_second, .flag_third{
+    height: 100px;
+    width: 33%;
+}
+
+.flag_first {
+    background-color: blue;
+   
+}
+
+.flag_second {
+    background-color: white;
+    
+    }
+
+.flag_third {
+    background-color: red;
+    
+}
+@media screen and (max-width: 1000px) {
+    .flag {
+        flex-direction: column;
+    }
+    .flag_first {
+        background-color: black;
+    }
+    .flag_second {
+        background-color: red;
+
+    }
+    .flag_third {
+        background-color: yellow;
+    }
+
+@media screen and (max-width: 500px) {
+    .flag_first {
+        background-color: black;
+    }
+    .flag_second {
+        background-color: yellow;
+    }
+    .flag_third {
+        background-color: red;
+    }
+}
+}
