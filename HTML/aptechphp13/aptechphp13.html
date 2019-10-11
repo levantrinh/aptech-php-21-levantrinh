@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="bootstrap.css">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>aptech php 13</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        /* Make the image fully responsive */
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--header-->
+    <div class="container">
+        <div class="row ">
+            <div class="col-12 d-flex border-bottom border-top justify-content-between align-items-center" style="height: 50px">
+            <a class="text-muted" href="#">Subscribe</a>         
+            <h1>APTECH PHP 13</h1>
+            <button type="button" class="btn btn-outline-dark">SIGN UP</button>
+        </div>
+
+        </div>
+    </div>
+    <!--menu-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mt-3">
+                <ul class="d-flex list-unstyled justify-content-between">
+                    <li><a href="#" class="text-dark font-weight-bold"><i class="fas fa-less-than"></i></a></li>
+                    <li><a href="#" class="text-dark font-weight-bold">HOME</a></li>
+                    <li><a href="#" class="text-dark font-weight-bold">HTML</a></li>
+                    <li><a href="#" class="text-dark font-weight-bold">CSS</a></li>
+                    <li><a href="#" class="text-dark font-weight-bold">JAVASCRIPT</a></li>
+                    <li><a href="#" class="text-dark font-weight-bold">PHP</a></li>
+                    <li><a href="#" class="text-dark font-weight-bold">CONTACT</a></li>
+                    <li><a href="#" class="text-dark font-weight-bold"><i class="fas fa-greater-than"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--SLIDE APPTECH-->
+
+    <div id="trinh" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#trinh" data-slide-to="0" class="active"></li>
+            <li data-target="#trinh" data-slide-to="1"></li>
+            <li data-target="#trinh" data-slide-to="2"></li>
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/php-mysql.jpg" alt="Los Angeles">
+            </div>
+
+            <div class="carousel-item">
+                <img src="images/team-building.jpg" alt="Chicago">
+                <div class="carousel-caption">
+                    <h3 class="bg-danger">Slide 2</h3>
+                    <p class="bg-success">This is second slide</p>
+                    <button type="button" class="btn bg-primary">Click fo More</button>
+                    <button type="button" class="btn bg-success">Bookmark</button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/slide-aptech.jpg" alt="New York">
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#trinh" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#trinh" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    </div>
+
+    <!--products-->
+    <div class="container">
+        <div class="row">
+            <!--HOC KY 1 VA 2-->
+            <div class="col-md-6 d-flex mt-3 px-0">
+                <div class="card mx-2">
+                    <img class="card-img-top" src="images/hoc-ky-1.jpg" width="100%" alt="hoc-ky-1">
+                    <div class="card-body">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">This is a wider card with supporting text below as a natural
+                            lead-int to
+                            additional content. This content is a little bit longer.</p>
+                        <p class="text-muted small">Update 3 minutes ago</p>
+                        <button type="button" class="btn btn-warning btn-block">Details</button>
+                    </div>
+                </div>
+                <div class="card mx-2">
+                        <img class="card-img-top" src="images/hoc-ky-2.jpg" alt="hoc-ky-2" width="100%">
+                        <div class="card-body">
+                            <h4 class="card-title">Card tile</h4>
+                            <p class="card-text">This is a wider card with supporting text below as a natural
+                                lead-int to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text text-muted small">Update 3 minutes ago</p>
+                            <button type="button" class="btn btn-warning btn-block">Details</button>
+                        </div>
+                </div>
+            </div>
+            <!--hoc ky 2
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="images/hoc-ky-2.jpg" alt="hoc-ky-2" width="100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Card tile</h4>
+                        <p class="card-text">This is a wider card with supporting text below as a natural
+                            lead-int to
+                            additional content. This content is a little bit longer.</p>
+                        <p class="card-text text-muted small">Update 3 minutes ago</p>
+                        <button type="button" class="btn btn-warning btn-block">Details</button>
+                    </div>
+                </div>
+            </div> ket thuc hoc ky 2 -->
+            
+            <!--HOC KY 3 VA 4-->
+            <div class="col-md-6 d-flex mt-3 px-0">
+                <div class="card mx-2">
+                    <img class="card-img-top" src="images/hoc-ky-3.jpg" alt="hoc-ky-2" width="100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Card tile</h4>
+                        <p class="card-text">This is a wider card with supporting text below as a natural
+                            lead-int to
+                            additional content. This content is a little bit longer.</p>
+                        <p class="card-text text-muted small">Update 3 minutes ago</p>
+                        <button type="button" class="btn btn-warning btn-block">Details</button>
+                    </div>
+                </div>
+                <div class="card mx-2">
+                        <img class="card-img-top" src="images/hoc-ky-4.jpg" alt="hoc-ky-2" width="100%">
+                        <div class="card-body">
+                            <h4 class="card-title">Card tile</h4>
+                            <p class="card-text">This is a wider card with supporting text below as a natural
+                                lead-int to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text text-muted small">Update 3 minutes ago</p>
+                            <button type="button" class="btn btn-warning btn-block">Details</button>
+                        </div>
+                    </div>
+            </div>
+            <!--hoc ky 4
+            <div class="col-md-3">
+                <div class="card">
+                    <img class="card-img-top" src="images/hoc-ky-4.jpg" alt="hoc-ky-2" width="100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Card tile</h4>
+                        <p class="card-text">This is a wider card with supporting text below as a natural
+                            lead-int to
+                            additional content. This content is a little bit longer.</p>
+                        <p class="card-text text-muted small">Update 3 minutes ago</p>
+                        <button type="button" class="btn btn-warning btn-block">Details</button>
+                    </div>
+                </div>
+            </div> ket thuc hoc ky 4-->
+        </div>
+    </div>
+    <hr>
+    <!--footer-->
+    <div class="container">
+        <div class="row">
+            <!--footer lien he-->
+            <div class="col-md-6">
+                <h6>HỆ THỐNG ĐÀO TẠO CÔNG NGHỆ THÔNG TIN QUỐC TẾ APTECH SOFTTECH</h6>
+                <p>Địa chỉ: Tòa nhà VNPT, 38 Yên Bái, Quận Hải Châu, Tp Đà Nẵng</p>
+                <p>Điện thoại: 02363.779.779, Fax: 02363.779.055</p>
+                <p>Email: tuyensinh@softech.vn</p>
+                <img src="images/banner-aptech.jpg" alt="softech-banner" width="450px" height="80px">
+                <p>© Atech Php 13 - 2018</p>
+            </div>
+            <!--footer navigation-->
+            <div class="col-md-3">
+                <ul class="list-unstyled">
+                    <li class="font-weight-bold">Navigation</li>
+                    <li><a href="#" class="text-muted text-dark">Home</a></li>
+                    <li><a href="#" class="text-muted text-dark">Html</a></li>
+                    <li><a href="#" class="text-muted text-dark">Css</a></li>
+                    <li><a href="#" class="text-muted text-dark">
+                            <Javascritp/a> </li> <li><a href="#" class="text-muted text-dark">PHP</a></li>
+                    <li><a href="#" class="text-muted text-dark">Contact</a></li>
+                </ul>
+            </div>
+            <!--footer about-->
+            <div class="col-md-3 d-none d-md-block">
+                <ul class="list-unstyled">
+                    <li class="font-weight-bold">About</li>
+                    <li><a href="#" class="text-dark text-muted">Team</a></li>
+                    <li><a href="#" class="text-dark text-muted">Loacation</a></li>
+                    <li><a href="#" class="text-dark text-muted">About</a></li>
+                    <li><a href="#" class="text-dark text-muted">Terms</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+
+</html>

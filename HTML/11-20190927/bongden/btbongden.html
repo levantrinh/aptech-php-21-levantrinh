@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>btbongden</title>
+</head>
+<body>
+    <img id="anh" src="pic_bulboff.gif" alt="">
+    <button onclick="batBongDen();">bat Bong Den</button>
+    <button onclick="tatBongDen();">tat Bong den</button>
+    <button onclick="batTatBongDen();">bat/tat bong den</button>
+
+    <script>
+       var chonAnh = document.getElementById('anh');
+       function batBongDen() {
+           chonAnh.src = "pic_bulbon.gif";
+       }
+       function tatBongDen() {
+           chonAnh.src = "pic_bulboff.gif";
+       }
+       function batTatBongDen() {
+           var kiemTra = chonAnh.src.includes("pic_bulboff.gif")
+           if (kiemTra == true) {
+               chonAnh.src ='pic_bulbon.gif';
+           }
+           else {
+               chonAnh.src = 'pic_bulboff.gif';
+           }
+       } 
+    </script>
+</body>
+</html>
