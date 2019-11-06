@@ -1,22 +1,18 @@
 <table>
-  <tr>
-    <th>id</th>
-    <th>name</th> 
-    <th>phone-number</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-  <tr>
-    <td>John</td>
-    <td>Doe</td>
-    <td>80</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>phone number</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($users as $user)
+    <tr>
+      <td>{{$user->id}}</td>
+      <td>{{$user->name}}</td>
+      <td>{{$user->phone->phone_number}}</td>
+    </tr>
+    @endforeach
+  </tbody>
 </table>

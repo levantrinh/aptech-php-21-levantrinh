@@ -15,8 +15,8 @@ class CreatePhonesTable extends Migration
     {
         Schema::create('phones', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('phone-number');
-            $table->string('users-id');
+            $table->string('phone_number');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
