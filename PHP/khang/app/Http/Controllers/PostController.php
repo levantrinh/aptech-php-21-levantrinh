@@ -50,6 +50,11 @@ class PostController extends Controller
         return view('posts.show',['post'=>$post]);
     }
 
+    // public function show($title)
+    // {
+    //     return view('posts.show',['post'=>$post]);
+    // }
+
     /**
      * Show the form for editing the specified resource.
      *

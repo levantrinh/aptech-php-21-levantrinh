@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('posts', 'PostController');
+Route::get('posts/{title}', 'PostController@show');

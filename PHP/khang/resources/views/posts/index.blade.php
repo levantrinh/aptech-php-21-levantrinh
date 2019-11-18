@@ -16,7 +16,8 @@
     <td>{{$post->description}}</td>
     <td>{{$post->content}}</td>
     <td>
-    <form action="{{route('posts.show', $post->id)}}" method="GET">
+    <?php $duongdan = str_slug($post->title) ?>
+    <form action="{{route('posts.show',$post->id)}}" method="GET">
     <button type="submit">View</button>
     </form>
 
