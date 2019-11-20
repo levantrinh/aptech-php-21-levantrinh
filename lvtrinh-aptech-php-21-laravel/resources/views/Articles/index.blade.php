@@ -22,8 +22,8 @@
   <thead>
     <tr>
       <th class="text-center bg-success text-white" style="position:sticky; top:0">id</th>
-      <th class="text-center bg-success text-white" style="position:sticky; top:0;">title</th>
-      <th class="text-center bg-success text-white" style="position:sticky; top:0">title_slug</th>
+      <th class="text-center bg-success text-white w-25" style="position:sticky; top:0;">title</th>
+      <th class="text-center bg-success text-white w-25" style="position:sticky; top:0">title_slug</th>
       <th class="text-center bg-success text-white" style="position:sticky; top:0">description</th>
       
       <th class="text-center bg-success text-white" style="position:sticky; top:0">Action</th>
@@ -36,12 +36,12 @@
 
       <td class="my-2 border border-primary font-weight-bold" style="width:10vw; font-size: 20px">{{$article->title}}</td>
 
-      <td  class="my-2 border border-primary">{{$article->title_slug}}</td>
+      <td  class="my-2 border border-primary">{{str_slug($article->title_slug)}}</td>
       
       
       <td  class="my-2 border border-primary w-25 font-weight-bold">{{$article->description}}</td>
 
-      <td>
+      <td class="text-center border-primary">
       <form action="{{route('articles.show', $article->id)}}" method="GET">
           <button type="submit" class="my-1 btn btn-success">View Post</button>
         </form>
