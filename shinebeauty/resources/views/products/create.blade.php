@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Thêm sp mới</title>
+    <title>Add new product</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
 </head>
 <body>
@@ -14,20 +14,20 @@
         <div class="col-9">
         <form action="{{route('products.store')}}" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <div>
-                <label for="">Title</label>
-                <input type="text" name="title">
+            <div class="my-4">
+                <label class="font-weight-bold" for="">Title</label>
+                <input class="w-100" type="text" name="title">
             </div>
-            <div>
-                <label for="">img_path_product</label>
-                <input type="text" name="img_path">
+            <div class="my-4">
+                <label class="font-weight-bold" for="">img_path_product</label>
+                <input class="w-100" type="text" name="img_path"><br>
             </div>
-            <div>
-                <label for="">Price</label>
+            <div class="my-4">
+                <label class="font-weight-bold" for="">Price</label>
                 <input type="number" name="price">
             </div>
-            <div>
-            <label class="text-primary font-weight-bold" for="">Content</label><br>       
+            <div class="my-4">
+            <label class="font-weight-bold" for="">Content</label><br>       
                         
                     <textarea name="content" id="editor1" rows="10" cols="80">
                         Your contents are here.

@@ -79,11 +79,11 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
        $product->title = $request->title;
-       $product->imp_path = $request->img_path;
+       $product->img_path = $request->img_path;
        $product->price = $request->price;
        $product->content = $request->content;
        $product->save();
-       return redirect()->route('products.show',$product->id);
+       return redirect()->route('products.index');
     }
 
     /**

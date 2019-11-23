@@ -12,7 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
+ Route::get('/products/trinh', function(){
+     return view('products/trinh');
+ });
+
+ 
 Route::resource('products','ProductController');
