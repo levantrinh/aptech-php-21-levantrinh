@@ -15,14 +15,14 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::get();
-        return view('products.index',['products'=>$products]);
+        return view('admin/products.index',['products'=>$products]);
         
     }
 
     public function home()
     {
         $homes = Product::get();
-        return view('/home',['homes'=>$homes]);
+        return view('layouts/home',['homes'=>$homes]);
     }
 
     /**
@@ -32,7 +32,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        return view('admin/products.create');
     }
 
     /**
@@ -50,7 +50,7 @@ class ProductController extends Controller
             'content'=>$_POST['content']
         ]);
         $products = Product::get();
-        return view('products.index',['products'=>$products]);
+        return view('admin/products.index',['products'=>$products]);
     }
 
     /**
@@ -61,7 +61,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('products.show',['product'=>$product]);
+        return view('admin/products.show',['product'=>$product]);
     }
 
     /**
@@ -72,7 +72,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('products.edit',['product'=>$product]);
+        return view('admin/products.edit',['product'=>$product]);
     }
 
     /**

@@ -23,22 +23,22 @@
     <!-- Kết thúc đoạn mã nhúng facebook -->
 
     <!-- header có logo -->   
-    @include('layouts.header')
+    @include('layouts.elements.header')
 
     <!-- thanh dieu huong MENU DESKTOP -->
-    @include('layouts.menu-desktop')
+    @include('layouts.elements.menu-desktop')
 
     <!-- menu mobile -->
-   @include('layouts.menu-mobile')
+   @include('layouts.elements.menu-mobile')
 
     <!-- carousel slide-->
-   @include('layouts.carousel')
+   @include('layouts.elements.carousel')
   
     <!-- Khu vực hiển thị sản phẩm -->
-    @include('layouts.product')
+    @include('layouts.elements.product')
 
     <!-- footer -->
-   @include('layouts.footer')
+   @include('layouts.elements.footer')
 
    
 

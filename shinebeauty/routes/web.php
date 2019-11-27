@@ -16,10 +16,12 @@
 // });
 
 Route::get('/', 'ProductController@home');
+Route::get('/admin','ProductController@index');
 
- Route::get('/products/trinh', function(){
-     return view('products/trinh');
- });
+//  Route::get('/products/trinh', function(){
+//      return view('products/trinh');
+//  });
 
  
 Route::resource('products','ProductController');
+Route::resource('categories','CategoryController');

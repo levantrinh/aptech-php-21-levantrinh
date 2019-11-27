@@ -4,33 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add new product</title>
+    <title>Edit a product</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
 </head>
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-3"></div>
+        <div class="col-3">
+        @include('admin.elements.sidebar-admin')
+        </div>
         <div class="col-9">
-        <form action="{{route('products.store')}}" method="POST">
+        <form action="{{route('products.update', $product->id)}}" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <div class="my-4">
-                <label class="font-weight-bold" for="">Title</label>
-                <input class="w-100" type="text" name="title">
+            <input type="hidden" name="_method" value="PUT">
+            <div>
+                <label for="">Title</label>
+                <input class="w-100" type="text" value="{{$product->title}}" name="title">
             </div>
-            <div class="my-4">
-                <label class="font-weight-bold" for="">img_path_product</label>
-                <input class="w-100" type="text" name="img_path"><br>
+            <div>
+                <label for="">img_path_product</label>
+                <input class="w-100" type="text" value="{{$product->img_path}}" name="img_path">
             </div>
-            <div class="my-4">
-                <label class="font-weight-bold" for="">Price</label>
-                <input type="number" name="price">
+            <div>
+                <label for="">Price</label>
+                <input type="number" name="price" value="{{$product->price}}">
             </div>
-            <div class="my-4">
-            <label class="font-weight-bold" for="">Content</label><br>       
+            <div>
+            <label class="text-primary font-weight-bold" for="">Content</label><br>       
                         
                     <textarea name="content" id="editor1" rows="10" cols="80">
-                        Your contents are here.
+                        {{$product->content}}
                     </textarea>
                 
                     <script src="{{asset('/ckeditor/ckeditor.js')}}"></script>
