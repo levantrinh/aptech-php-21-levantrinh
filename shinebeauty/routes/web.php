@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+
+Route::get('/', 'ProductController@home');
 
  Route::get('/products/trinh', function(){
      return view('products/trinh');

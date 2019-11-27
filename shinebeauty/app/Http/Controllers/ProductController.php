@@ -19,6 +19,12 @@ class ProductController extends Controller
         
     }
 
+    public function home()
+    {
+        $homes = Product::get();
+        return view('/home',['homes'=>$homes]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
