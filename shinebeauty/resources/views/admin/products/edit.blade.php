@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
 </head>
 <body>
-<div class="container">
+<div class="container mt-4">
     <div class="row">
         <div class="col-3">
         @include('admin.elements.sidebar-admin')
@@ -18,19 +18,19 @@
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type="hidden" name="_method" value="PUT">
             <div>
-                <label for="">Title</label>
+                <label class="font-weight-bold" for="">Title</label>
                 <input class="w-100" type="text" value="{{$product->title}}" name="title">
             </div>
-            <div>
-                <label for="">img_path_product</label>
+            <div class="my-4">
+                <label class="font-weight-bold" for="">img_path_product</label>
                 <input class="w-100" type="text" value="{{$product->img_path}}" name="img_path">
             </div>
-            <div>
-                <label for="">Price</label>
+            <div class="my-4">
+                <label class="font-weight-bold" for="">Price</label>
                 <input type="number" name="price" value="{{$product->price}}">
             </div>
             <div>
-            <label class="text-primary font-weight-bold" for="">Content</label><br>       
+            <label class="font-weight-bold" for="">Content</label><br>       
                         
                     <textarea name="content" id="editor1" rows="10" cols="80">
                         {{$product->content}}

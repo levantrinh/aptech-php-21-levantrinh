@@ -11,17 +11,17 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
 
 Route::get('/', 'ProductController@home');
 Route::get('/admin','ProductController@index');
 
-//  Route::get('/products/trinh', function(){
-//      return view('products/trinh');
-//  });
-
- 
 Route::resource('products','ProductController');
 Route::resource('categories','CategoryController');
+
+//Auth
+Route::get('dangnhap', function()
+{
+    return view('dangnhap');
+});
+
+Route::post('login', 'AuthController@login')->name('login');

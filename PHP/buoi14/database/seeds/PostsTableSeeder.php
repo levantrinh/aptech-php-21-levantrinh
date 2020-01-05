@@ -15,9 +15,9 @@ class PostsTableSeeder extends Seeder
         $faker = Faker\Factory::create();
         for ($i = 0; $i < 5; $i++) {
             Post::insert([
-                'title' => $faker->realText(100),
-                'description' => $faker->realText(200),
-                'content' => $faker->randomHtml()
+                'title' => $faker->realText(50),
+                'description' => $faker->realText(100),
+                'content' => $faker->realText(200)
             ]);
         }
     }

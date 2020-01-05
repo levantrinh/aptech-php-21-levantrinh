@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
 </head>
 <body>
-<div class="container">
+<div class="container mt-4">
     <div class="row">
         <div class="col-3">
         @include('admin.elements.sidebar-admin')
         </div>
         <div class="col-9">
-        <h4 class="mt-3">FORM TO CREATE NEW PRODUCT</h4>
+        <h4>FORM TO CREATE NEW PRODUCT</h4>
         <form action="{{route('products.store')}}" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <div class="my-4">
+            <div>
                 <label class="font-weight-bold" for="">Title</label>
                 <input class="w-100" type="text" name="title">
             </div>

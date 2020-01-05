@@ -16,3 +16,17 @@ Route::get('/', function () {
 });
 Route::resource('/users', 'UserController');
 Route::resource('/posts', 'PostController');
+
+// Route::get('get', function(){
+// $data = DB::table('users')->get();
+// var_dump($data);
+// });
+
+Route::get('where', function(){
+    $data = DB::table('users')->where('id','=', 3)->first();
+    var_dump($data);
+});
+
+Route::get('select', function(){
+    $data = DB::table('users')->select(['id','name'])->get();
+});

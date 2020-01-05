@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/posts', 'PostController@index');
+Route::get('qb/get', function(){
+    $data = DB::table('posts')->get();
+    var_dump($data);
+});

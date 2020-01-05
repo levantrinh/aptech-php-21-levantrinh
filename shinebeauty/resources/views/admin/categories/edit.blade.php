@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
 </head>
 <body>
-<div class="container">
+<div class="container mt-4">
     <div class="row">
         <div class="col-3">
         @include('admin.elements.sidebar-admin')
         </div>
         <div class="col-9">
-        <h4 class="mt-4">FORM TO EDIT PRODUCT CATEGORY</h4>
+        <h4>FORM TO EDIT PRODUCT CATEGORY</h4>
         <form action="{{route('categories.update',$category->id)}}" method="POST">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <input type="hidden" name="_method" value="PUT">
