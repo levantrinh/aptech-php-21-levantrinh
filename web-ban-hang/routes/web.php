@@ -21,7 +21,7 @@ Route::get('/', function () {
 //ADMIN
 Route::get('admin','ProductController@index');
 Route::resource('products','ProductController');
-Route::resource('categories','CategoryController');
+Route::resource('productTypes','ProductTypeController');
 //Quan ly gio hang
 Route::resource('bill', 'AdminBillController');
 

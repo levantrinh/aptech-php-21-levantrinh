@@ -24,9 +24,9 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="{{route('trang-chu')}}" class="brand-link">
-            <img src="source/image/luffy.jpg" alt="BeautyShine logo" class="brand-image img-circle elevation-3"
+            <img src="source/image/logo-shine.png" alt="BeautyShine logo" class="brand-image img-circle elevation-3"
                 style="opacity: .8">
-            <span class="brand-text font-weight-light">HOME PAGE</span>
+            <span class="brand-text font-weight-light">HOME</span>
             </a>
             <!-- Sidebar -->
             <div class="sidebar">
@@ -52,12 +52,7 @@
                                         <p>Products</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="{{asset('categories')}}" class="nav-link">
-                                        <i class="fas fa-book nav-icon"></i>
-                                        <p>Categories</p>
-                                    </a>
-                                </li>
+                               
                                 <li class="nav-item">
                                     <a href="{{asset('bill')}}" class="nav-link">
                                         <i class="fas fa-list-ol"></i>

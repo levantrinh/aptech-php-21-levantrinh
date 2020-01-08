@@ -28,7 +28,7 @@
                                     <tbody>
                                     <tr>
                                         <td>Tên người đặt hàng</td>
-                                        <td>{{ $customerInfo->name }}</td>
+                                        <td>{{ $customerInfo->customer_name }}</td>
                                     </tr>
                                     <tr>
                                         <td>Ngày đặt hàng</td>
@@ -36,19 +36,19 @@
                                     </tr>
                                     <tr>
                                         <td>Số điện thoại</td>
-                                        <td>{{ $customerInfo->phone_number }}</td>
+                                        <td>{{ $customerInfo->customer_phone }}</td>
                                     </tr>
                                     <tr>
                                         <td>Địa chỉ</td>
-                                        <td>{{ $customerInfo->address }}</td>
+                                        <td>{{ $customerInfo->customer_address }}</td>
                                     </tr>
                                     <tr>
                                         <td>Email</td>
-                                        <td>{{ $customerInfo->email }}</td>
+                                        <td>{{ $customerInfo->customer_email }}</td>
                                     </tr>
                                     <tr>
                                         <td>Lưu ý</td>
-                                        <td>{{ $customerInfo->note }}</td>
+                                        <td>{{ $customerInfo->customer_note }}</td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -56,16 +56,14 @@
                             <table id="myTable" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
                                 <thead>
                                 <tr role="row">
-                                    <th>STT</th>
                                     <th>Tên sản phẩm</th>
                                     <th>Loại sản phẩm</th>
                                     <th>Số lượng</th>
                                     <th>Giá tiền</th>
                                 </thead>
                                 <tbody>
-                                @foreach($billInfo as $key => $bill)
+                                @foreach($billInfo as $bill)
                                     <tr>
-                                        <td>{{ $key+1 }}</td>
                                         <td>{{ $bill->product_name }}</td>
                                         <td>{{ $bill->type_product }}</td>
                                         <td>{{ $bill->qty }}</td>
@@ -74,14 +72,14 @@
                                 @endforeach
                                 <tr>
                                     <td class=" text-right" colspan="4"><b>Tổng tiền</b></td>
-                                    <td colspan="1"><b class="text-red">{{ $bill->total }}0 <u>đ</u></b></td>
+                                    <td colspan="1"><b class="text-red">{{ $customerInfo->total }}0 <u>đ</u></b></td>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <form action="{{ url('bill') }}/{{ $customerInfo->id_bill }}" method="POST">
+                        <form action="{{ url('bill') }}/{{ $customerInfo->id }}" method="POST">
                             <input type="hidden" name="_method" value="PUT">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <div class="row">
@@ -91,8 +89,8 @@
                                         <label for="status" class="mb-1">Trạng thái giao hàng:  </label>
                                         <select name="status" id="status" class="form-control input-inline" style="width: 150px">
                                             <option value="1">Chưa giao</option>
-                                            <option value="2">Đang giao</option>
                                             <option value="2">Đã giao</option>
+                                            <option value="3">Hủy đơn</option>
                                         </select>
                                         <input type="submit" value="Xử lý" class="btn btn-primary">
                                     </div>

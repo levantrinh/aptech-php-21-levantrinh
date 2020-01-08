@@ -20,11 +20,9 @@ class AdminBillController extends Controller
     public function index()
     {
 
-        $customers = DB::table('customer')
-                    ->orderBy('id', 'desc')
-                    ->get();
+        $bills = Bill::all();
 
-            return view('admin/bill.bill_list', compact('customers'));
+            return view('admin/bill.bill_list', compact('bills'));
     }
 
     /**
@@ -36,25 +34,22 @@ class AdminBillController extends Controller
     public function edit($id)
     {
 
-        $customerInfo = DB::table('customer')
-                        ->join('bills', 'customer.id', '=', 'bills.id_customer')
-                        ->select('customer.*', 'bills.id as id_bill', 'bills.date_order as bill_date')
-                        ->where('customer.id', '=', $id)
-                        ->first();
-
-        $billInfo = DB::table('bills')
-                    ->join('bill_detail', 'bills.id', '=', 'bill_detail.id_bill')
-                    ->leftjoin('products', 'bill_detail.id_product', '=', 'products.id')
-                    ->leftjoin('type_products', 'products.id_type', '=', 'type_products.id')
-                    ->where('bills.id_customer', '=', $id)
-                    ->select('bills.*', 'bill_detail.*', 'products.name as product_name', 'type_products.name as type_product')
+        $customerInfo = DB::table('bills')
+                    ->join('customer', 'bills.id_customer', '=', 'customer.id')
+                    ->where('bills.id',$id)
+                    ->select('bills.*',
+                    'bills.date_order as bill_date','customer.name as customer_name','customer.email as customer_email','customer.address as customer_address','customer.phone_number as customer_phone','customer.note as customer_note')
+                    ->first();
+        $billInfo = DB::table('bill_detail')
+                    ->join('products', 'bill_detail.id_product', '=', 'products.id')
+                    ->join('type_products', 'products.id_type', '=', 'type_products.id')
+                    ->where('bill_detail.id_bill',$id)
+                    ->select('bill_detail.*',
+                    'products.name as product_name', 'type_products.name as type_product')
                     ->get();
-                    
-        
-        $this->data['customerInfo'] = $customerInfo;
-        $this->data['billInfo'] = $billInfo;
-        
-        return view('admin.bill.bill_detail', $this->data);
+                    //dd($billInfo); exit();
+            return view('admin.bill.bill_detail',compact('customerInfo','billInfo'));
+    
     }
 
     /**
@@ -71,23 +66,6 @@ class AdminBillController extends Controller
         $bill->save();
         Session::flash('message', "Cập nhật trạng thái đơn hàng thành công");
 
-        return Redirect::to('bill');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $bill = DB::table('bill_detail')->join('bills','bill_detail.id_bill','=','bills.id')
-                                        ->leftjoin('customer','bills.id_customer','=','customer.id')
-                                        ->where('bills.id_customer', $id)->delete();
-        
-        Session::flash('message', "Xóa đơn hàng thành công");
-        
         return Redirect::to('bill');
     }
 }

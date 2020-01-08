@@ -23,37 +23,30 @@
                                         <table class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
                                             <thead>
                                                 <tr role="row">
-                                                    <th>ID</th>
                                                     <th class="sorting">Tên khách</th>
                                                     <th class="sorting">Địa chỉ</th>
                                                     <th>Email</th>
-                                                    <th class="sorting">Ngày đặt hàng</th>
+                                                    <th class="sorting">Tổng tiền</th>
                                                     <th>Trạng thái</th>
                                                     <th class="sorting">Vào xem</th>
-                                                    <th class="sorting">Xóa</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($customers as $customer)
+                                                @foreach($bills as $bill)
                                                 <tr>
-                                                    <td>{{ $customer->id }}</td>
-                                                    <td>{{ $customer->name }}</td>
-                                                    <td>{{ $customer->address }}</td>
-                                                    <td>{{ $customer->email }}</td>
-                                                    <td>{{ $customer->created_at }}</td>
+                                                    <td>{{ $bill->customer->name }}</td>
+                                                    <td>{{ $bill->customer->address }}</td>
+                                                    <td>{{ $bill->customer->email }}</td>
+                                                    
+                                                    <td>{{ $bill->total }}</td>
                                                     <td>
-                                                        @if(1) Chưa xuất hàng
-                                                        @else Đã xuất Hàng
-                                                        @endif
-                                                    </td>
-                                                    <td><a href="{{ url('bill')}}/{{ $customer->id }}/edit">Chi tiết</a></td>
-                                                    <td>
-                                                        <form action="{{ url('bill')}}/{{ $customer->id }}" method="post">
-                                                            <input type="hidden" name="_method" value="DELETE">
-                                                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                                                            <input type="submit" value="Xóa đơn" class="btn btn-danger">
-                                                        </form>
-                                                    </td>
+                                                        @if(!($bill->status)) Chưa xử lý
+                                                        @elseif($bill->status==1) Chưa giao hàng
+                                                        @elseif($bill->status==2) Đã giao hàng
+                                                        @else Đơn hàng đã hủy
+                                                        @endif</td> 
+                                                    
+                                                    <td><a href="{{ url('bill')}}/{{ $bill->id }}/edit">Chi tiết</a></td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
